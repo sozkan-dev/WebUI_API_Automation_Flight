@@ -51,11 +51,9 @@ public class MainPage extends BasePage {
             waitForWebElementAndClick(indexItem);
 
             waitForWebElementAndClick(secondDropdownButton);
-            //System.out.println("Second List Size: " + getSecondDDList().size());
             System.out.println("SecondList: " + secondList.size());
 
             for (int j = 1; j <= secondList.size(); j++) {
-                //Thread.sleep(2000);
                 WebElement elem2 = waitAndConvertToWebElement(By.xpath("/html/body/main/div[1]/div[2]/div/ul/li" + "[" + j + "]"));
                 String secondA = elem2.getText();
                 System.out.println("Second Element Text: " + elem2.getText());
@@ -66,14 +64,14 @@ public class MainPage extends BasePage {
             }
 
             waitForWebElementAndClick(firstDropdownButton);
-            //Thread.sleep(2000);
+
             System.out.println(flag);
 
         }
         return flag;
     }
 
-    public boolean isItemsCountMatch(){
+    public boolean isItemsCountMatch() {
         boolean flag = false;
         waitForWebElementAndClick(firstDropdownButton);
         waitForWebElementAndClick(firstList.get(0));
@@ -85,7 +83,7 @@ public class MainPage extends BasePage {
         int count = Integer.valueOf(numberText);
         System.out.println(count);
 
-        if(totalResultItems.size() == count){
+        if (totalResultItems.size() == count) {
             flag = true;
         }
 
